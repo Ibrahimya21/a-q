@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Col, Form, Row } from 'react-bootstrap'
 
 const FormInput = ({ setNotify }) => {
-
+    // يبيبيبيبي
     const [qu, setQu] = useState('')
     const [an, setAn] = useState('')
 
@@ -12,7 +12,7 @@ const FormInput = ({ setNotify }) => {
             return;
         }
     }
-    
+
     return (
         <Row className="my-2">
             <Col sm="5">
