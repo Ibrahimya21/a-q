@@ -1,16 +1,23 @@
 import React, { useState } from 'react'
 import { Col, Form, Row } from 'react-bootstrap'
+import { question } from '../data'
 
-const FormInput = ({ setNotify }) => {
-    // يبيبيبيبي
+const FormInput = ({ onAdd, setNotify }) => {
     const [qu, setQu] = useState('')
     const [an, setAn] = useState('')
+    const [idCounter, setIdCounter] = useState(1);
 
     const addNewItem = () => {
         if (qu === "" || an === "") {
             setNotify("من فضلك اكمل البيانات", "Error");
             return;
         }
+        question.push({ id: idCounter, q: qu, a: an });
+        setQu('')
+        setAn('')
+        setIdCounter(idCounter + 1)
+        onAdd();
+        console.log(question)
     }
 
     return (
